@@ -9,6 +9,13 @@ hsp = _move * walksp;
 
 vsp = vsp + grv;
 
+if (place_meeting(x,y+1,oInvisibleWall)) && (key_jump)
+{
+	vsp = -jumpsp
+}
+
+
+
 if (place_meeting(x+hsp,y,oInvisibleWall))
 {
 	while (!place_meeting(x+sign(hsp),y,oInvisibleWall))
