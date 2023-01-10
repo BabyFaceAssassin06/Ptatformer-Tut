@@ -15,7 +15,7 @@ if (place_meeting(x,y+1,oInvisibleWall)) && (key_jump)
 }
 
 
-
+//Horizontal collision
 if (place_meeting(x+hsp,y,oInvisibleWall))
 {
 	while (!place_meeting(x+sign(hsp),y,oInvisibleWall))
@@ -26,6 +26,7 @@ if (place_meeting(x+hsp,y,oInvisibleWall))
 }
 x = x + hsp
 
+//Vertical collision
 if (place_meeting(x,y+vsp,oInvisibleWall))
 {
 	while (!place_meeting(x,y+sign(vsp),oInvisibleWall))
@@ -35,3 +36,9 @@ if (place_meeting(x,y+vsp,oInvisibleWall))
 	vsp = 0;
 }
 y = y + vsp
+//Animation
+if (place_meeting(x,y+1,oInvisibleWall))
+{
+	sprite_index = sPlayerJump;
+	
+}
