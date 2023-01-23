@@ -36,9 +36,28 @@ if (place_meeting(x,y+vsp,oInvisibleWall))
 	vsp = 0;
 }
 y = y + vsp
+
 //Animation
-if (place_meeting(x,y+1,oInvisibleWall))
+if (!place_meeting(x,y+1,oInvisibleWall))
 {
 	sprite_index = sPlayerJump;
-	
+	image_speed = 0;	
+	//Are we jumping?
+	if (vsp >= -(jumpsp/2)) {
+		
 }
+
+else
+{
+	image_speed = 1;
+	if (hsp == 0)
+	{
+		sprite_index = sPlayerIdle;
+	}
+	else
+	{	
+		sprite_index = sPlayerRun;
+	}
+}
+	
+if (hsp != 0) image_xscale = sign(hsp);
